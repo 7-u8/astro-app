@@ -1,5 +1,7 @@
 # ASTRO APP
 
+من صنع **ABU 3RB** (ابو عرب) و**ABU SHADAD** (ابو شداد).
+
 > English: [README.md](README.md) · الرخصة: MIT ([LICENSE](LICENSE)) · البرنامج مستقل وغير تابع لـ Cronus أو CollectiveMinds.
 
 برنامج سطح مكتب لإدارة جهاز Cronus Zen ومحرر لسكربتات GPC.
@@ -116,3 +118,11 @@ ui/js/gpc-lang.js         كلمات GPC للتلوين
 - `cargo run --example hid_list`: يعرض كل أجهزة HID المتصلة.
 
 تم التحقق على جهاز حقيقي: القراءة صحيحة. **الفورمات (RESTART) لم يُجرَّب على الجهاز الحقيقي.**
+
+## الحقوق والتواصل
+
+صنع البرنامج **ABU 3RB** (ابو عرب) و**ABU SHADAD** (ابو شداد). الرخصة MIT (انظر [LICENSE](LICENSE)).
+
+- TikTok: [_TMO](https://www.tiktok.com/@_tmo)
+- Instagram: [7.U8](https://www.instagram.com/7.u8/)
+- Discord: `7_UG`

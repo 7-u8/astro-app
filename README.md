@@ -1,5 +1,7 @@
 # ASTRO APP
 
+Made by **ABU 3RB** (ابو عرب) and **ABU SHADAD** (ابو شداد).
+
 A desktop app for the **Cronus Zen**: manage the device's script slots, edit GPC scripts, and build a complete script with a wizard.
 Built with **Rust** ([Tauri 2](https://tauri.app/)) and a dark HTML/JS interface. Open source under the MIT licence.
 
@@ -90,6 +92,14 @@ tools/                      tests
 
 Issues and pull requests are welcome. Please run the tests above before sending a change, and do not add third-party software
 (compilers, game art, leaked scripts) to the repository.
+
+## Credits
+
+Created by **ABU 3RB** (ابو عرب) and **ABU SHADAD** (ابو شداد).
+
+- TikTok: [_TMO](https://www.tiktok.com/@_tmo)
+- Instagram: [7.U8](https://www.instagram.com/7.u8/)
+- Discord: `7_UG`
 
 ## Licence
 
