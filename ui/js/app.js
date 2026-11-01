@@ -1,9 +1,20 @@
 import { CodeEditor } from './editor.js';
 import { GPC_KEYWORDS, GPC_FUNCTIONS } from './gpc-lang.js';
 import { numbersToHex, obfuscateVariables, oneLine, hexToNumbers, beautify, stringsToData } from './gpc-tools.js';
-import { GpcSession, init as gpcInit, list_targets as gpcListTargets } from './libgpc.js';
 import { initMakeYourGpc } from './myg/myg.js';
 import { renderBestValues } from './myg/best-values.js';
+
+// The GPC compiler (libgpc) is third-party software and is not part of this repository.
+// If its files are in ui/js/ they are loaded as usual; if not, the app still opens and compiling reports the problem.
+const NO_COMPILER = 'No GPC compiler is installed (see "Compiler" in README.md).';
+let GpcSession, gpcInit, gpcListTargets;
+try {
+  ({ GpcSession, init: gpcInit, list_targets: gpcListTargets } = await import('./libgpc.js'));
+} catch {
+  GpcSession = class { constructor() { throw new Error(NO_COMPILER); } };
+  gpcInit = () => ({ success: false, error: NO_COMPILER });
+  gpcListTargets = () => ({ success: false, error: NO_COMPILER });
+}
 
 const invoke = (cmd, args) => window.__TAURI__.core.invoke(cmd, args);
 

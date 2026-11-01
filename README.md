@@ -37,7 +37,8 @@ It also lists the aim sweeps of an FC script.
 ## Compiler
 
 Compiling GPC to device bytecode uses a GPC compiler library (`libgpc`). **It is not included in this repository**: it is third-party software.
-Put its three files in `ui/js/` (`libgpc.js`, `libgpc.wasm`, `libgpc_bg.js`) before running the app.
+If its three files (`libgpc.js`, `libgpc.wasm`, `libgpc_bg.js`) are in `ui/js/`, the app uses them. If not, the app still opens: the editor, menus, mods,
+previews, BEST VALUES, and the device connection (read slots, format) work, and compiling or flashing a script from source reports that no compiler is installed.
 
 ## Build and run
 
@@ -61,7 +62,7 @@ node tools/test-logo-export.mjs "<repo folder>"
 node tools/gpc-check.mjs file.gpc
 ```
 
-The `node tools/*` tests compile with the GPC compiler, so they need it in `ui/js/` (see **Compiler**).
+The `node tools/*` tests compile with the GPC compiler, so they need its files in `ui/js/` (see **Compiler**).
 `cargo test` does not need a compiler and does not need a device.
 
 ## Project layout
