@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTRO APP</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">A</span>
+      <span class="brand-name">ASTRO</span>
+    </div>
+    <nav class="nav" role="tablist">
+      <button class="nav-btn active" data-view="boot" role="tab">BOOT</button>
+      <button class="nav-btn" data-view="compiler" role="tab">COMPILER</button>
+      <button class="nav-btn" data-view="myg" role="tab">MAKE YOUR GPC</button>
+      <button class="nav-btn" data-view="bestvalues" role="tab">BEST VALUES</button>
+    </nav>
+    <div class="device-pill" id="devicePill">
+      <span class="dot"></span>
+      <span id="devicePillText">Disconnected</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- BOOT -->
+    <section class="view active" id="view-boot">
+      <div class="boot-head">
+        <div class="boot-actions">
+          <button class="btn btn-primary" id="btnConnect">CONNECT</button>
+          <button class="btn" id="btnRefresh" disabled>REFRESH</button>
+          <button class="btn btn-danger" id="btnRestart" disabled>RESTART</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span class="stat-label">Scripts</span><span class="stat-value" id="statSlots">0 / 8</span></div>
+          <div class="stat"><span class="stat-label">Storage</span><span class="stat-value" id="statStorage">0 KB / 256 KB</span></div>
+          <div class="stat"><span class="stat-label">Firmware</span><span class="stat-value" id="statFirmware">—</span></div>
+          <div class="stat"><span class="stat-label">Serial</span><span class="stat-value mono" id="statSerial">—</span></div>
+        </div>
+      </div>
+
+      <div class="boot-body">
+        <div class="slots" id="slots"></div>
+
+        <aside class="library">
+          <div class="library-head">
+            <span class="section-title">Scripts</span>
+            <div class="library-tools">
+              <button class="icon-btn" id="btnLibRefresh" title="Refresh">&#x21bb;</button>
+              <button class="icon-btn" id="btnLibFolder" title="Open folder">&#x1F4C1;&#xFE0E;</button>
+            </div>
+          </div>
+          <input class="search" id="libSearch" placeholder="Search scripts" spellcheck="false">
+          <div class="library-list" id="libraryList"></div>
+          <p class="hint">Double-click a script to open it in the Compiler. Compile and upload with Zen Studio.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- COMPILER -->
+    <section class="view" id="view-compiler">
+      <div class="menubar">
+        <div class="menu" data-menu="file">
+          <button class="menu-btn">File</button>
+          <div class="menu-pop">
+            <button data-cmd="new">New<kbd>Ctrl+N</kbd></button>
+            <button data-cmd="open">Open…<kbd>Ctrl+O</kbd></button>
+            <div class="sep"></div>
+            <button data-cmd="save">Save<kbd>Ctrl+S</kbd></button>
+            <button data-cmd="saveAs">Save As…<kbd>Ctrl+Shift+S</kbd></button>
+            <div class="sep"></div>
+            <button data-cmd="exportGpc">Export as GPC…</button>
+            <div class="sep"></div>
+            <button data-cmd="close">Close Tab<kbd>Ctrl+W</kbd></button>
+          </div>
+        </div>
+        <span class="menu-divider">|</span>
+        <div class="menu" data-menu="tools">
+          <button class="menu-btn">Tools</button>
+          <div class="menu-pop" id="toolsMenu">
+            <div class="menu-empty">No tools installed yet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs" id="tabs"></div>
+      <div class="editor-host" id="editorHost"></div>
+
+      <div class="statusbar">
+        <span id="statusPos">Ln 1, Col 1</span>
+        <span id="statusFile"></span>
+        <span class="spacer"></span>
+        <span id="statusInfo">GPC · compile and upload with Zen Studio</span>
+      </div>
+    </section>
+
+    <!-- MAKE YOUR GPC -->
+    <section class="view" id="view-myg"></section>
+
+    <!-- BEST VALUES -->
+    <section class="view" id="view-bestvalues"></section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="modal">
+    <div class="modal">
+      <h3 id="modalTitle"></h3>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

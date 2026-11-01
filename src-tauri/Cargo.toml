@@ -1,0 +1,27 @@
+[package]
+name = "astro-app"
+version = "1.0.0"
+description = "ASTRO APP - Cronus Zen slot manager and GPC compiler"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# hidapi compiles the C hidapi library (via the cc crate) for USB HID access.
+hidapi = "2"
+rfd = "0.15"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

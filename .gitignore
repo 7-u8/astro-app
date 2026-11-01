@@ -1,0 +1,15 @@
+# build output
+src-tauri/target/
+src-tauri/gen/
+
+# third-party GPC compiler: not distributed with this repo (see README, "Compiler")
+ui/js/libgpc.js
+ui/js/libgpc.wasm
+ui/js/libgpc_bg.js
+
+# local files
+node_modules/
+*.pdb
+*.log
+.claude/
+Thumbs.db
